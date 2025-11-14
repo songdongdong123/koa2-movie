@@ -1,0 +1,18 @@
+name: Simple CI
+
+# 触发时机
+on:
+  push:
+    branches:
+      - main   # 监听 main 分支的推送
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # 运行环境
+
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v2   # 把代码拉下来
+
+      - name: Run a simple script
+        run: echo "Hello, GitHub Actions!"
